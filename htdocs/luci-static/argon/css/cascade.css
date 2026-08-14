@@ -3752,6 +3752,33 @@ pre.command-output {
 [data-page="admin-services-npc"] div.cbi-value.nowrap {
   white-space: normal;
 }
+[data-page^="admin-services-openclash"] {
+  --argon-openclash-accent: var(--primary);
+  --argon-openclash-accent-hover: var(--primary);
+  --argon-openclash-accent-strong: var(--primary);
+  --argon-openclash-accent-a5: transparent;
+  --argon-openclash-accent-a10: transparent;
+  --argon-openclash-accent-a20: transparent;
+  --argon-openclash-accent-a30: transparent;
+  --argon-openclash-accent-a40: transparent;
+  --argon-openclash-accent-a50: transparent;
+  --argon-openclash-accent-a60: transparent;
+  --argon-openclash-success: #059669;
+  --argon-openclash-error: #dc2626;
+}
+@supports (color: color-mix(in srgb, red, blue)) {
+  [data-page^="admin-services-openclash"] {
+    --argon-openclash-accent-hover: color-mix(in srgb, var(--argon-openclash-accent) 85%, black);
+    --argon-openclash-accent-strong: color-mix(in srgb, var(--argon-openclash-accent) 75%, black);
+    --argon-openclash-accent-a5: color-mix(in srgb, var(--argon-openclash-accent) 5%, transparent);
+    --argon-openclash-accent-a10: color-mix(in srgb, var(--argon-openclash-accent) 10%, transparent);
+    --argon-openclash-accent-a20: color-mix(in srgb, var(--argon-openclash-accent) 20%, transparent);
+    --argon-openclash-accent-a30: color-mix(in srgb, var(--argon-openclash-accent) 30%, transparent);
+    --argon-openclash-accent-a40: color-mix(in srgb, var(--argon-openclash-accent) 40%, transparent);
+    --argon-openclash-accent-a50: color-mix(in srgb, var(--argon-openclash-accent) 50%, transparent);
+    --argon-openclash-accent-a60: color-mix(in srgb, var(--argon-openclash-accent) 60%, transparent);
+  }
+}
 [data-page^="admin-services-openclash"] .tabs > #tool_label {
   padding-top: 0;
   padding-bottom: 0;
@@ -3789,6 +3816,22 @@ pre.command-output {
 [data-page^="admin-services-openclash"] .oc {
   --bg-light: #fff;
   --bg-gray: #fff;
+  --bg-dark: #f1f5f9 !important;
+  --border-dark: #cbd5e1 !important;
+  --tab-border: #e2e8f0 !important;
+  --primary-color: var(--argon-openclash-accent) !important;
+  --primary-bright: var(--argon-openclash-accent) !important;
+  --btn-primary-hover: var(--argon-openclash-accent-hover) !important;
+  --announcement-end: var(--argon-openclash-accent-strong) !important;
+  --primary-a5: var(--argon-openclash-accent-a5) !important;
+  --primary-a10: var(--argon-openclash-accent-a10) !important;
+  --primary-a20: var(--argon-openclash-accent-a20) !important;
+  --primary-a30: var(--argon-openclash-accent-a30) !important;
+  --primary-a40: var(--argon-openclash-accent-a40) !important;
+  --primary-a50: var(--argon-openclash-accent-a50) !important;
+  --primary-a60: var(--argon-openclash-accent-a60) !important;
+  --radio-hover-bg: var(--argon-openclash-accent-a5) !important;
+  --slate-400: var(--argon-openclash-accent-strong) !important;
   border-radius: 8px;
 }
 [data-page^="admin-services-openclash"] .oc .developer-container {
@@ -3865,6 +3908,39 @@ pre.command-output {
 [data-page^="admin-services-openclash"] .oc .subscription-info-container {
   background: transparent !important;
 }
+[data-page^="admin-services-openclash"] .oc .sub-info-url-form-textarea:focus,
+[data-page^="admin-services-openclash"] .oc .select-class:focus,
+[data-page^="admin-services-openclash"] .oc .custom-option-input:focus {
+  box-shadow: 0 0 0 2px var(--argon-openclash-accent-a10) !important;
+}
+[data-page^="admin-services-openclash"] .oc .radio-button input[type="radio"]:checked + label {
+  box-shadow: 0 1px 2px 0 var(--argon-openclash-accent-a10) !important;
+}
+[data-page^="admin-services-openclash"] .oc .help-link:hover {
+  background: var(--argon-openclash-accent-a10) !important;
+}
+[data-page^="admin-services-openclash"] .oc .select-option[data-value="custom"] {
+  background: linear-gradient(135deg, var(--argon-openclash-accent-a10), var(--argon-openclash-accent-a5)) !important;
+  border-color: var(--argon-openclash-accent-a20) !important;
+}
+[data-page^="admin-services-openclash"] .oc .select-option[data-value="custom"]:hover {
+  background: linear-gradient(135deg, var(--argon-openclash-accent-a20), var(--argon-openclash-accent-a10)) !important;
+}
+[data-page^="admin-services-openclash"] .oc #mode-icon rect[fill="#2F88FF"] {
+  fill: var(--argon-openclash-accent) !important;
+}
+[data-page^="admin-services-openclash"] b[style*="color:green"],
+[data-page^="admin-services-openclash"] b[style*="color: green"],
+[data-page^="admin-services-openclash"] font[style*="color:green"],
+[data-page^="admin-services-openclash"] font[style*="color: green"] {
+  color: var(--argon-openclash-success) !important;
+}
+[data-page^="admin-services-openclash"] b[style*="color:red"],
+[data-page^="admin-services-openclash"] b[style*="color: red"],
+[data-page^="admin-services-openclash"] font[style*="color:red"],
+[data-page^="admin-services-openclash"] font[style*="color: red"] {
+  color: var(--argon-openclash-error) !important;
+}
 [data-page^="admin-services-openclash"] .cbi-tabmenu > li {
   border-right: none !important;
   margin: 0 0.4rem 0 0 !important;
@@ -3875,6 +3951,40 @@ pre.command-output {
 [data-page^="admin-services-openclash"] [id^="tab-header-openclash-"] > ul.cbi-tabmenu > li {
   margin: 0 !important;
   border-right: 1px solid var(--border-light, #e2e8f0) !important;
+}
+[data-page^="admin-services-openclash"] [id^="tab-header-openclash-"] {
+  border-bottom-color: var(--border-light, #e2e8f0) !important;
+  background: var(--bg-gray, #fff) !important;
+}
+[data-page^="admin-services-openclash"] [id^="tab-header-openclash-"] > ul.cbi-tabmenu {
+  background: var(--bg-gray, #fff) !important;
+}
+[data-page^="admin-services-openclash"] [id^="tab-header-openclash-"] > ul.cbi-tabmenu > li {
+  color: var(--text-secondary, #64748b) !important;
+  border-color: var(--border-light, #e2e8f0) !important;
+}
+[data-page^="admin-services-openclash"] [id^="tab-header-openclash-"] > ul.cbi-tabmenu > li.cbi-tab {
+  color: #fff !important;
+  background: var(--argon-openclash-accent) !important;
+}
+[data-page^="admin-services-openclash"] [id^="tab-header-openclash-"] > ul.cbi-tabmenu > li.cbi-tab > a {
+  color: #fff !important;
+}
+[data-page^="admin-services-openclash"] [id^="tab-header-openclash-"] > ul.cbi-tabmenu > li.cbi-tab-disabled {
+  background: var(--bg-white, #fff) !important;
+}
+[data-page^="admin-services-openclash"] [id^="tab-header-openclash-"] > ul.cbi-tabmenu > li.cbi-tab-disabled > a {
+  color: var(--text-primary, #374151) !important;
+}
+[data-page^="admin-services-openclash"] [id^="tab-header-openclash-"] > ul.cbi-tabmenu > li:not(.cbi-tab):hover,
+[data-page^="admin-services-openclash"] [id^="tab-header-openclash-"] > ul.cbi-tabmenu > li:not(.cbi-tab):focus {
+  color: var(--argon-openclash-accent) !important;
+  border-color: var(--argon-openclash-accent) !important;
+  background: var(--argon-openclash-accent-a10) !important;
+}
+[data-page^="admin-services-openclash"] [id^="tab-header-openclash-"] > ul.cbi-tabmenu > li:not(.cbi-tab):hover > a,
+[data-page^="admin-services-openclash"] [id^="tab-header-openclash-"] > ul.cbi-tabmenu > li:not(.cbi-tab):focus > a {
+  color: var(--argon-openclash-accent) !important;
 }
 [data-page^="admin-services-openclash"] [id^="tab-header-openclash-"] + [id="tab-content"] .td.cbi-section-table-cell > p {
   padding: 0;

@@ -717,6 +717,33 @@
 
 // Services - OpenClash
 [data-page^="admin-services-openclash"] {
+    // Bind OpenClash's custom UI tokens to Argon's configurable accent without
+    // changing semantic status, log-level, brand, or decorative colours.
+    --argon-openclash-accent: var(--primary);
+    --argon-openclash-accent-hover: var(--primary);
+    --argon-openclash-accent-strong: var(--primary);
+    --argon-openclash-accent-a5: transparent;
+    --argon-openclash-accent-a10: transparent;
+    --argon-openclash-accent-a20: transparent;
+    --argon-openclash-accent-a30: transparent;
+    --argon-openclash-accent-a40: transparent;
+    --argon-openclash-accent-a50: transparent;
+    --argon-openclash-accent-a60: transparent;
+    --argon-openclash-success: #059669;
+    --argon-openclash-error: #dc2626;
+
+    @supports (color: color-mix(in srgb, red, blue)) {
+        --argon-openclash-accent-hover: color-mix(in srgb, var(--argon-openclash-accent) 85%, black);
+        --argon-openclash-accent-strong: color-mix(in srgb, var(--argon-openclash-accent) 75%, black);
+        --argon-openclash-accent-a5: color-mix(in srgb, var(--argon-openclash-accent) 5%, transparent);
+        --argon-openclash-accent-a10: color-mix(in srgb, var(--argon-openclash-accent) 10%, transparent);
+        --argon-openclash-accent-a20: color-mix(in srgb, var(--argon-openclash-accent) 20%, transparent);
+        --argon-openclash-accent-a30: color-mix(in srgb, var(--argon-openclash-accent) 30%, transparent);
+        --argon-openclash-accent-a40: color-mix(in srgb, var(--argon-openclash-accent) 40%, transparent);
+        --argon-openclash-accent-a50: color-mix(in srgb, var(--argon-openclash-accent) 50%, transparent);
+        --argon-openclash-accent-a60: color-mix(in srgb, var(--argon-openclash-accent) 60%, transparent);
+    }
+
     // Normalize the OpenClash config switcher and top-level tab bar height
     .tabs>#tool_label {
         padding-top: 0;
@@ -772,6 +799,24 @@
     .oc {
         --bg-light: #fff;
         --bg-gray: #fff;
+        --bg-dark: #f1f5f9 !important;
+        --border-dark: #cbd5e1 !important;
+        --tab-border: #e2e8f0 !important;
+        --primary-color: var(--argon-openclash-accent) !important;
+        --primary-bright: var(--argon-openclash-accent) !important;
+        --btn-primary-hover: var(--argon-openclash-accent-hover) !important;
+        --announcement-end: var(--argon-openclash-accent-strong) !important;
+        --primary-a5: var(--argon-openclash-accent-a5) !important;
+        --primary-a10: var(--argon-openclash-accent-a10) !important;
+        --primary-a20: var(--argon-openclash-accent-a20) !important;
+        --primary-a30: var(--argon-openclash-accent-a30) !important;
+        --primary-a40: var(--argon-openclash-accent-a40) !important;
+        --primary-a50: var(--argon-openclash-accent-a50) !important;
+        --primary-a60: var(--argon-openclash-accent-a60) !important;
+        --radio-hover-bg: var(--argon-openclash-accent-a5) !important;
+        // OpenClash uses this token only as the second stop of dark-mode
+        // announcement gradients; keep those banners in Argon's accent family.
+        --slate-400: var(--argon-openclash-accent-strong) !important;
         border-radius: 8px;
 
         .developer-container {
@@ -869,6 +914,51 @@
         background: transparent !important;
     }
 
+    // OpenClash still has a few primary-colour effects outside its token set.
+    .oc .sub-info-url-form-textarea:focus,
+    .oc .select-class:focus,
+    .oc .custom-option-input:focus {
+        box-shadow: 0 0 0 2px var(--argon-openclash-accent-a10) !important;
+    }
+
+    .oc .radio-button input[type="radio"]:checked+label {
+        box-shadow: 0 1px 2px 0 var(--argon-openclash-accent-a10) !important;
+    }
+
+    .oc .help-link:hover {
+        background: var(--argon-openclash-accent-a10) !important;
+    }
+
+    .oc .select-option[data-value="custom"] {
+        background: linear-gradient(135deg, var(--argon-openclash-accent-a10), var(--argon-openclash-accent-a5)) !important;
+        border-color: var(--argon-openclash-accent-a20) !important;
+    }
+
+    .oc .select-option[data-value="custom"]:hover {
+        background: linear-gradient(135deg, var(--argon-openclash-accent-a20), var(--argon-openclash-accent-a10)) !important;
+    }
+
+    // The literal fill is also OpenClash's JavaScript state marker. Override
+    // only the rendered colour so mode switching keeps working.
+    .oc #mode-icon rect[fill="#2F88FF"] {
+        fill: var(--argon-openclash-accent) !important;
+    }
+
+    // Normalize legacy LuCI status text while preserving success/error meaning.
+    b[style*="color:green"],
+    b[style*="color: green"],
+    font[style*="color:green"],
+    font[style*="color: green"] {
+        color: var(--argon-openclash-success) !important;
+    }
+
+    b[style*="color:red"],
+    b[style*="color: red"],
+    font[style*="color:red"],
+    font[style*="color: red"] {
+        color: var(--argon-openclash-error) !important;
+    }
+
     .cbi-tabmenu>li {
         border-right: none !important;
         margin: 0 0.4rem 0 0 !important;
@@ -882,6 +972,49 @@
     [id^="tab-header-openclash-"]>ul.cbi-tabmenu>li {
         margin: 0 !important;
         border-right: 1px solid var(--border-light, #e2e8f0) !important;
+    }
+
+    // OpenClash's DNS table embeds fixed light/dark colours in its template.
+    [id^="tab-header-openclash-"] {
+        border-bottom-color: var(--border-light, #e2e8f0) !important;
+        background: var(--bg-gray, #fff) !important;
+
+        >ul.cbi-tabmenu {
+            background: var(--bg-gray, #fff) !important;
+
+            >li {
+                color: var(--text-secondary, #64748b) !important;
+                border-color: var(--border-light, #e2e8f0) !important;
+
+                &.cbi-tab {
+                    color: #fff !important;
+                    background: var(--argon-openclash-accent) !important;
+
+                    >a {
+                        color: #fff !important;
+                    }
+                }
+
+                &.cbi-tab-disabled {
+                    background: var(--bg-white, #fff) !important;
+
+                    >a {
+                        color: var(--text-primary, #374151) !important;
+                    }
+                }
+
+                &:not(.cbi-tab):hover,
+                &:not(.cbi-tab):focus {
+                    color: var(--argon-openclash-accent) !important;
+                    border-color: var(--argon-openclash-accent) !important;
+                    background: var(--argon-openclash-accent-a10) !important;
+
+                    >a {
+                        color: var(--argon-openclash-accent) !important;
+                    }
+                }
+            }
+        }
     }
 
     [id^="tab-header-openclash-"]+[id="tab-content"] {
