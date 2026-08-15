@@ -946,7 +946,45 @@
     }
 
     .oc .radio-button input[type="radio"]:checked+label {
+        color: #fff !important;
+        border-color: var(--argon-openclash-accent) !important;
+        background: var(--argon-openclash-accent) !important;
         box-shadow: 0 1px 2px 0 var(--argon-openclash-accent-a10) !important;
+    }
+
+    .oc .radio-button label:hover {
+        color: var(--argon-openclash-accent) !important;
+        border-color: var(--argon-openclash-accent) !important;
+        background: var(--argon-openclash-accent-a10) !important;
+    }
+
+    // OpenClash dev renamed these log tabs from cbi-tab* to oc-tab*.
+    // Keep both generations themed so installed releases and dev snapshots
+    // behave consistently.
+    .oc #tab-header>ul.cbi-tabmenu>li.cbi-tab,
+    .oc #tab-header>ul.oc-tabmenu>li.oc-tab {
+        background: var(--argon-openclash-accent) !important;
+    }
+
+    .oc #tab-header>ul.cbi-tabmenu>li:not(.cbi-tab):hover,
+    .oc #tab-header>ul.cbi-tabmenu>li:not(.cbi-tab):focus,
+    .oc #tab-header>ul.oc-tabmenu>li:not(.oc-tab):hover,
+    .oc #tab-header>ul.oc-tabmenu>li:not(.oc-tab):focus {
+        color: var(--argon-openclash-accent) !important;
+        border-color: var(--argon-openclash-accent) !important;
+        background: var(--argon-openclash-accent-a10) !important;
+    }
+
+    .oc #tab-header>ul.cbi-tabmenu>li:not(.cbi-tab):hover>a,
+    .oc #tab-header>ul.cbi-tabmenu>li:not(.cbi-tab):focus>a,
+    .oc #tab-header>ul.oc-tabmenu>li:not(.oc-tab):hover>a,
+    .oc #tab-header>ul.oc-tabmenu>li:not(.oc-tab):focus>a {
+        color: var(--argon-openclash-accent) !important;
+    }
+
+    .oc .card .general .btn:hover,
+    .oc #addCustomOption:hover {
+        background: var(--argon-openclash-accent-hover) !important;
     }
 
     .oc .help-link:hover {
@@ -1039,6 +1077,15 @@
                 }
             }
         }
+    }
+
+    // OpenClash's inline table template gives hovered tab links an ID-scoped,
+    // important blue colour. Include the map ID so the themed link wins too.
+    #cbi-openclash [id^="tab-header-openclash-"]>ul.cbi-tabmenu>
+    li:not(.cbi-tab):hover>a,
+    #cbi-openclash [id^="tab-header-openclash-"]>ul.cbi-tabmenu>
+    li:not(.cbi-tab):focus>a {
+        color: var(--argon-openclash-accent) !important;
     }
 
     [id^="tab-header-openclash-"]+[id="tab-content"] {

@@ -3929,7 +3929,37 @@ pre.command-output {
   box-shadow: 0 0 0 2px var(--argon-openclash-accent-a10) !important;
 }
 [data-page^="admin-services-openclash"] .oc .radio-button input[type="radio"]:checked + label {
+  color: #fff !important;
+  border-color: var(--argon-openclash-accent) !important;
+  background: var(--argon-openclash-accent) !important;
   box-shadow: 0 1px 2px 0 var(--argon-openclash-accent-a10) !important;
+}
+[data-page^="admin-services-openclash"] .oc .radio-button label:hover {
+  color: var(--argon-openclash-accent) !important;
+  border-color: var(--argon-openclash-accent) !important;
+  background: var(--argon-openclash-accent-a10) !important;
+}
+[data-page^="admin-services-openclash"] .oc #tab-header > ul.cbi-tabmenu > li.cbi-tab,
+[data-page^="admin-services-openclash"] .oc #tab-header > ul.oc-tabmenu > li.oc-tab {
+  background: var(--argon-openclash-accent) !important;
+}
+[data-page^="admin-services-openclash"] .oc #tab-header > ul.cbi-tabmenu > li:not(.cbi-tab):hover,
+[data-page^="admin-services-openclash"] .oc #tab-header > ul.cbi-tabmenu > li:not(.cbi-tab):focus,
+[data-page^="admin-services-openclash"] .oc #tab-header > ul.oc-tabmenu > li:not(.oc-tab):hover,
+[data-page^="admin-services-openclash"] .oc #tab-header > ul.oc-tabmenu > li:not(.oc-tab):focus {
+  color: var(--argon-openclash-accent) !important;
+  border-color: var(--argon-openclash-accent) !important;
+  background: var(--argon-openclash-accent-a10) !important;
+}
+[data-page^="admin-services-openclash"] .oc #tab-header > ul.cbi-tabmenu > li:not(.cbi-tab):hover > a,
+[data-page^="admin-services-openclash"] .oc #tab-header > ul.cbi-tabmenu > li:not(.cbi-tab):focus > a,
+[data-page^="admin-services-openclash"] .oc #tab-header > ul.oc-tabmenu > li:not(.oc-tab):hover > a,
+[data-page^="admin-services-openclash"] .oc #tab-header > ul.oc-tabmenu > li:not(.oc-tab):focus > a {
+  color: var(--argon-openclash-accent) !important;
+}
+[data-page^="admin-services-openclash"] .oc .card .general .btn:hover,
+[data-page^="admin-services-openclash"] .oc #addCustomOption:hover {
+  background: var(--argon-openclash-accent-hover) !important;
 }
 [data-page^="admin-services-openclash"] .oc .help-link:hover {
   background: var(--argon-openclash-accent-a10) !important;
@@ -3999,6 +4029,10 @@ pre.command-output {
 }
 [data-page^="admin-services-openclash"] [id^="tab-header-openclash-"] > ul.cbi-tabmenu > li:not(.cbi-tab):hover > a,
 [data-page^="admin-services-openclash"] [id^="tab-header-openclash-"] > ul.cbi-tabmenu > li:not(.cbi-tab):focus > a {
+  color: var(--argon-openclash-accent) !important;
+}
+[data-page^="admin-services-openclash"] #cbi-openclash [id^="tab-header-openclash-"] > ul.cbi-tabmenu > li:not(.cbi-tab):hover > a,
+[data-page^="admin-services-openclash"] #cbi-openclash [id^="tab-header-openclash-"] > ul.cbi-tabmenu > li:not(.cbi-tab):focus > a {
   color: var(--argon-openclash-accent) !important;
 }
 [data-page^="admin-services-openclash"] [id^="tab-header-openclash-"] + [id="tab-content"] .td.cbi-section-table-cell > p {
