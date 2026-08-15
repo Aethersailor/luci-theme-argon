@@ -729,6 +729,7 @@
     --argon-openclash-accent-a40: transparent;
     --argon-openclash-accent-a50: transparent;
     --argon-openclash-accent-a60: transparent;
+    --argon-openclash-control-border: #dee2e6;
     --argon-openclash-success: #059669;
     --argon-openclash-error: #dc2626;
 
@@ -830,6 +831,17 @@
         // announcement gradients; keep those banners in Argon's accent family.
         --slate-400: var(--argon-openclash-accent-strong) !important;
         border-radius: 8px;
+
+        // CodeMirror's GitHub theme hardcodes a blue focus ring. Match
+        // Argon's neutral field border at rest and current accent on focus.
+        .cm-editor {
+            border-color: var(--argon-openclash-control-border) !important;
+        }
+
+        .cm-editor.cm-focused {
+            border-color: var(--argon-openclash-accent) !important;
+            box-shadow: 0 0 0 2px var(--argon-openclash-accent-a10) !important;
+        }
 
         .developer-container {
             background: transparent;
