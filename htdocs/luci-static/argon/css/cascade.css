@@ -3996,6 +3996,9 @@ pre.command-output {
 [data-page^="admin-services-openclash"] [id^="tab-header-openclash-"] + [id="tab-content"] .td.cbi-section-table-cell > p {
   padding: 0;
 }
+[data-page^="admin-services-openclash"] #cbi-openclash-dns_servers .cbi-section-table-cell > .cbi-button-edit + .cbi-button-remove {
+  margin-left: 0.5rem !important;
+}
 [data-page^="admin-services-openclash"] #tab-content .dom {
   padding: 0 1rem 1rem 1rem;
 }

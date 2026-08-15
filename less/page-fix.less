@@ -1035,6 +1035,12 @@
         }
     }
 
+    // Keep the DNS row's destructive action visually separate from Edit.
+    #cbi-openclash-dns_servers .cbi-section-table-cell>
+    .cbi-button-edit+.cbi-button-remove {
+        margin-left: 0.5rem !important;
+    }
+
     #tab-content .dom {
         padding: 0 1rem 1rem 1rem;
     }
