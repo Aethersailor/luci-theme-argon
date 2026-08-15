@@ -744,6 +744,18 @@
         --argon-openclash-accent-a60: color-mix(in srgb, var(--argon-openclash-accent) 60%, transparent);
     }
 
+    // Argon's generic CBI focus shadow contains a fixed blue tint. Preserve
+    // its geometry while binding only OpenClash's standard controls to the
+    // configured accent; custom .oc controls keep their own focus rings.
+    .cbi-input-text:focus,
+    .cbi-input-password:focus,
+    .cbi-input-select:focus,
+    .tool_label_select:focus,
+    .cbi-dropdown:focus {
+        box-shadow: 0 3px 9px rgba(50, 50, 9, 0),
+            3px 4px 8px var(--argon-openclash-accent-a10) !important;
+    }
+
     // Normalize the OpenClash config switcher and top-level tab bar height
     .tabs>#tool_label {
         padding-top: 0;

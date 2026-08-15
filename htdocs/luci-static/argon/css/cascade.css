@@ -3779,6 +3779,13 @@ pre.command-output {
     --argon-openclash-accent-a60: color-mix(in srgb, var(--argon-openclash-accent) 60%, transparent);
   }
 }
+[data-page^="admin-services-openclash"] .cbi-input-text:focus,
+[data-page^="admin-services-openclash"] .cbi-input-password:focus,
+[data-page^="admin-services-openclash"] .cbi-input-select:focus,
+[data-page^="admin-services-openclash"] .tool_label_select:focus,
+[data-page^="admin-services-openclash"] .cbi-dropdown:focus {
+  box-shadow: 0 3px 9px rgba(50, 50, 9, 0), 3px 4px 8px var(--argon-openclash-accent-a10) !important;
+}
 [data-page^="admin-services-openclash"] .tabs > #tool_label {
   padding-top: 0;
   padding-bottom: 0;
